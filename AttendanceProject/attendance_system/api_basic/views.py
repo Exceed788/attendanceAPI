@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, mixins
-from rest_framework.authentication import (BasicAuthentication,
-                                           SessionAuthentication)
-from rest_framework.permissions import IsAuthenticated
+# from rest_framework.authentication import (BasicAuthentication,
+#                                            SessionAuthentication)
+# from rest_framework.permissions import IsAuthenticated
 
 from .models import Event, Student
 from .serializers import EventSerializer, StudentSerializer
@@ -19,8 +19,8 @@ class StudentList(generics.GenericAPIView,
     serializer_class = StudentSerializer
     queryset = Student.objects.all()     
     lookup_field = 'id'
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     
     def get(self, request, id = None):
@@ -40,8 +40,8 @@ class StudentDetail(mixins.RetrieveModelMixin,
     serializer_class = StudentSerializer
     queryset = Student.objects.all()     
     lookup_field = 'id'
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 
     def get(self, request, *args, **kwargs):
@@ -65,8 +65,8 @@ class EventList(generics.GenericAPIView,
     serializer_class = EventSerializer
     queryset = Event.objects.all()     
     lookup_field = 'id'
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     
     def get(self, request, id = None):
@@ -86,8 +86,8 @@ class EventDetail(mixins.RetrieveModelMixin,
     serializer_class = EventSerializer
     queryset = Event.objects.all()     
     lookup_field = 'id'
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 
     def get(self, request, *args, **kwargs):
